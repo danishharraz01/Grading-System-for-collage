@@ -1,0 +1,7 @@
+Options -Indexes
+
+# Don't serve the SQL dump, docs or git metadata over the web.
+<FilesMatch "\.(sql|md|gitignore)$">
+    Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.git
