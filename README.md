@@ -2,6 +2,16 @@
 
 A web app for recording student marks and working out final grades. It is built with PHP (PDO) and MySQL, uses plain CSS and JavaScript (no frameworks), and runs on XAMPP.
 
+## Screenshots
+
+| Login | Results |
+|---|---|
+| ![Login page](docs/screenshots/login.png) | ![Results page with summary cards and grade chart](docs/screenshots/results.png) |
+
+| Add student (live preview) | Result slip |
+|---|---|
+| ![Add student form with live total and grade preview](docs/screenshots/add-student.png) | ![Printable result slip](docs/screenshots/result-slip.png) |
+
 ## Features
 
 - **Login** with `password_hash` / `password_verify` and PHP sessions. You must log in to open any page. Sessions time out after 30 minutes of inactivity, and there is a logout button.
