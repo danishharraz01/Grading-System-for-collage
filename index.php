@@ -57,24 +57,24 @@ require __DIR__ . '/includes/header.php';
     </div>
 </div>
 
-<section class="cards" aria-label="Summary">
-    <div class="card stat">
+<section class="stats" aria-label="Summary">
+    <div class="stat">
         <span class="stat-label">Students</span>
         <span class="stat-value"><?= $count ?></span>
     </div>
-    <div class="card stat">
+    <div class="stat">
         <span class="stat-label">Average</span>
         <span class="stat-value"><?= $count ? e(number_format((float)$summary['avg_total'], 1)) : '–' ?></span>
     </div>
-    <div class="card stat">
+    <div class="stat">
         <span class="stat-label">Highest</span>
         <span class="stat-value"><?= $count ? e(fmt_mark($summary['hi'])) : '–' ?></span>
     </div>
-    <div class="card stat">
+    <div class="stat">
         <span class="stat-label">Lowest</span>
         <span class="stat-value"><?= $count ? e(fmt_mark($summary['lo'])) : '–' ?></span>
     </div>
-    <div class="card stat">
+    <div class="stat">
         <span class="stat-label">Pass rate</span>
         <span class="stat-value"><?= $count ? e($passRate) . '%' : '–' ?></span>
         <span class="stat-note"><?= (int)$summary['passed'] ?> of <?= $count ?> passed (D and above)</span>
@@ -177,13 +177,13 @@ require __DIR__ . '/includes/header.php';
                         <td class="num strong"><?= e(fmt_mark($s['total'])) ?></td>
                         <td class="center"><span class="grade grade-<?= e($s['grade']) ?>"><?= e($s['grade']) ?></span></td>
                         <td class="no-print right row-actions">
-                            <a class="btn btn-sm" href="slip.php?id=<?= (int)$s['id'] ?>">Slip</a>
-                            <a class="btn btn-sm" href="student_form.php?id=<?= (int)$s['id'] ?>">Edit</a>
+                            <a href="slip.php?id=<?= (int)$s['id'] ?>">Slip</a>
+                            <a href="student_form.php?id=<?= (int)$s['id'] ?>">Edit</a>
                             <form method="post" action="delete.php"
                                   data-confirm="Delete the result for <?= e($s['student_name']) ?> (<?= e($s['matric_no']) ?>)? This cannot be undone.">
                                 <?= csrf_field() ?>
                                 <input type="hidden" name="id" value="<?= (int)$s['id'] ?>">
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                <button type="submit" class="link-danger">Delete</button>
                             </form>
                         </td>
                     </tr>

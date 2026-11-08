@@ -2,6 +2,6 @@
 <footer class="footer no-print">
     <div class="wrap">&copy; <?= date('Y') ?> <?= e(COLLEGE_NAME) ?> &middot; Grading System</div>
 </footer>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=<?= (int)@filemtime(__DIR__ . '/../assets/app.js') ?>"></script>
 </body>
 </html>

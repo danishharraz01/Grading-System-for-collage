@@ -135,7 +135,7 @@ require __DIR__ . '/includes/header.php';
         <div class="marks-grid">
             <?php foreach (MARK_LIMITS as $field => $max): ?>
                 <div class="field">
-                    <label for="<?= e($field) ?>"><?= e(MARK_LABELS[$field]) ?> <span class="muted">(max <?= $max ?> = <?= $max ?>%)</span></label>
+                    <label for="<?= e($field) ?>"><?= e(MARK_LABELS[$field]) ?> <span class="field-hint">out of <?= $max ?> &middot; <?= $max ?>% of total</span></label>
                     <input type="number" id="<?= e($field) ?>" name="<?= e($field) ?>" value="<?= e($values[$field]) ?>"
                            required min="0" max="<?= $max ?>" step="0.01" inputmode="decimal" data-mark
                            data-label="<?= e(MARK_LABELS[$field]) ?>"
@@ -155,7 +155,7 @@ require __DIR__ . '/includes/header.php';
     </form>
 
     <aside class="card preview" aria-live="polite">
-        <h2 class="card-title">Live preview</h2>
+        <h2 class="card-title">Running total</h2>
         <div class="preview-total">
             <span class="preview-number" id="preview-total">0</span><span class="muted"> / 100</span>
         </div>

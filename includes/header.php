@@ -19,15 +19,15 @@ $navItems = [
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= e(($pageTitle ?? 'Home') . ' · ' . APP_NAME) ?></title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css?v=<?= (int)@filemtime(__DIR__ . '/../assets/style.css') ?>">
 </head>
 <body class="<?= e($bodyClass) ?>">
 <?php if ($user): ?>
 <header class="topbar">
     <div class="wrap topbar-inner">
         <a class="brand" href="index.php">
-            <span class="brand-mark">AK</span>
-            <span><?= e(COLLEGE_NAME) ?> <small>Grading System</small></span>
+            <span class="brand-name"><?= e(COLLEGE_NAME) ?></span>
+            <span class="brand-sub">Grading System</span>
         </a>
         <nav class="nav" aria-label="Main">
             <?php foreach ($navItems as $key => [$href, $label]): ?>

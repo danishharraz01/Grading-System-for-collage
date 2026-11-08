@@ -45,9 +45,9 @@ require __DIR__ . '/includes/header.php';
 ?>
 <div class="auth-card card">
     <div class="auth-head">
-        <span class="brand-mark brand-mark-lg">AK</span>
-        <h1><?= e(COLLEGE_NAME) ?></h1>
-        <p class="muted">Grading System &middot; Staff login</p>
+        <p class="auth-college"><?= e(COLLEGE_NAME) ?></p>
+        <h1>Staff sign in</h1>
+        <p class="muted">Use the account given to you by the academic office.</p>
     </div>
 
     <?php if ($error): ?>
@@ -65,7 +65,7 @@ require __DIR__ . '/includes/header.php';
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required autocomplete="current-password">
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
     </form>
 </div>
 <?php require __DIR__ . '/includes/footer.php'; ?>

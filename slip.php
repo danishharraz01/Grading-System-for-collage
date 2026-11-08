@@ -38,11 +38,8 @@ require __DIR__ . '/includes/header.php';
 
 <article class="card slip">
     <header class="slip-head">
-        <span class="brand-mark brand-mark-lg">AK</span>
-        <div>
-            <h2><?= e(COLLEGE_NAME) ?></h2>
-            <p class="muted">Student Result Slip</p>
-        </div>
+        <h2><?= e(COLLEGE_NAME) ?></h2>
+        <p>Statement of Examination Result</p>
     </header>
 
     <dl class="slip-info">
@@ -82,10 +79,12 @@ require __DIR__ . '/includes/header.php';
         Grading scale:
         <?php
         $parts = [];
-        foreach (GRADE_SCALE as $g => [$min, $max]) $parts[] = "$min–$max $g";
+        foreach (GRADE_SCALE as $g => [$min, $max]) $parts[] = "{$min}–{$max} {$g}";
         echo e(implode(' · ', $parts));
         ?>
     </p>
+
+    <p class="slip-note small">This is a computer-generated statement. No signature is required.</p>
 
     <footer class="slip-foot muted small">
         <span>Issued <?= e(date('j F Y')) ?></span>
